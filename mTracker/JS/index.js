@@ -9,21 +9,20 @@ function corsite(paginas) {
 }
 
 function cadastrarConta(paginaCadastro){
-    let nome = paginaCadastro.getElementById("user");
-    let senha = paginaCadastro.getElementById("senha");
-    let confirmarSenha = paginaCadastro.getElementById("confirmarSenha");
 
-    if (nome == null || senha == null || confirmarSenha == null) {
-        if (nome == null && senha == null && confirmarSenha == null){
-            window.alert("Todos os campos devem ser preenchidos.")
-        }
-        else {
-            window.alert("Todos os campos devem ser preenchidos.")
-            }
+    let nome = paginaCadastro.getElementById("user").value;
+    let senha = paginaCadastro.getElementById("senha").value;
+    let confirmarSenha = paginaCadastro.getElementById("confirmarSenha").value;
+
+    if (nome == null || senha == null || confirmarSenha == null || nome == "" || senha == "" || confirmarSenha == "") {
+            window.alert("Todos os campos devem ser preenchidos corretamente.");
     }
     else {
-        if (senha != confirmarSenha){
-            window.alert("Senha e confirmar senha devem ser iguais.")
+        if (senha == confirmarSenha){
+            window.alert("Senha e confirmar senha são iguais.");
         }
-    }
+        else {
+            window.alert("Senha e confirmar senha devem ser iguais.");
+        }
+    };
 }
