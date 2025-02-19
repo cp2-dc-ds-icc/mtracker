@@ -1,4 +1,4 @@
-function corsite(paginas) {
+function corsite(paginas){
     paginas.body.classList.toggle("modoescuro");
 
     let texto = paginas.getElementsByClassName("menu");
@@ -6,21 +6,20 @@ function corsite(paginas) {
 
     let but = pagina.getElementByClassName("btn-darlig");
     but.classList.toggle("modoescuro");
-}
+    }
+
+users = []
+senhas = []
 
 function salvarCadastro(user, senha){
-
-    var users = []
-    var senhas = []
-
     var valorUser = user;
     users.push(valorUser);
 
     var valorSenha = senha;
     senhas.push(valorSenha);
 
-    alert(users, senhas);
-}
+    console.log(users, senhas);
+    }
 
 function cadastrarConta(){
 
@@ -40,7 +39,7 @@ function cadastrarConta(){
             window.alert("Senha e confirmar senha devem ser iguais.");
         }
     };
-}
+    }
     function conf(){
         let form=document.getElementById("cadastro")
         form.addEventListener('submit', async (e) => {
