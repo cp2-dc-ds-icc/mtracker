@@ -8,42 +8,45 @@ function corsite(paginas){
     but.classList.toggle("modoescuro");
     }
 
-users = []
-senhas = []
-
-function salvarCadastro(user, senha){
-    var valorUser = user;
-    users.push(valorUser);
-
-    var valorSenha = senha;
-    senhas.push(valorSenha);
-
-    console.log(users, senhas);
-    }
-
 function cadastrarConta(){
 
     let nome = document.getElementById("user").value;
     let senha = document.getElementById("senha").value;
     let confirmarSenha = document.getElementById("confirmarSenha").value;
 
-    if (nome == null || senha == null || confirmarSenha == null || nome == "" || senha == "" || confirmarSenha == "") {
+    if (nome === "" || senha === "" || confirmarSenha === "") {
         window.alert("Todos os campos devem ser preenchidos corretamente.");
     }
     else {
-        if (senha === confirmarSenha){
-            window.alert("Conta cadastrada com sucesso");
-            salvarCadastro(nome, senha);
+        if (localStorage.getItem(nome) === null){
+            if (senha === confirmarSenha){
+                window.alert("Conta cadastrada com sucesso");
+                localStorage.setItem(nome, senha);
+                window.location.href = "../login.html";
+            }
+            else {
+                window.alert("Senha e confirmar senha devem ser iguais.");
+            }
         }
         else {
-            window.alert("Senha e confirmar senha devem ser iguais.");
+            window.alert("Nome de usuário já cadastrado.");
         }
     };
     }
-    function conf(){
-        let form=document.getElementById("cadastro")
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            cadastrarConta()
-        });
+
+function logarConta(){
+
+    let nome = document.getElementById("user").value;
+    let senha = document.getElementById("senha").value;
+
+    if (localStorage.getItem(nome) === null){
+        window.alert("Conta inexistente.");
     }
+    else if (localStorage.getItem(nome) !== senha){
+        window.alert("Senha incorreta.");
+    }
+    else {
+        window.alert("Logado.")
+        window.location.href = "../index.html";
+    }
+}

@@ -12,17 +12,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/index.css">
-    <script src="JS/index.js"></script>
     <title>Cadastro - MTRACKER</title>
 </head>
-<body onload="conf()">
+<body>
     <header>
         <div class="interface">
             <nav class="menu">
                 <ul>
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li id=""><a href="login.html">Login</a></li>
                 </ul>
             </nav>
             <div class="btn-darlig">
@@ -35,13 +34,13 @@
     <main>
         <div class="interface">
             <div class="login">
-                <h1>Cadastrar</h1><br>
-                <form action="" id="cadastro">
-                    <input type="text" placeholder="Nome de Usuário" id="user" required><br><br>
-                    <input type="password" placeholder="Senha" id="senha" required><br><br>
-                    <input type="password" placeholder="Confirmar senha" id="confirmarSenha" required><br><br>
-                    <button type="submit">CRIAR</button>
-                </form><br>
+                <h1>Cadastrar</h1>
+                <br>
+                <input type="text" placeholder="Nome de Usuário" id="user" required><br><br>
+                <input type="password" placeholder="Senha" id="senha" required><br><br>
+                <input type="password" placeholder="Confirmar senha" id="confirmarSenha" required><br><br>
+                <button type="submit" onclick="cadastrarConta()">CRIAR</button><br>
+                <br>
                 <p>Já tem uma conta? <a href="login.html">Entre agora.</a></p>
             </div>
         </div>
