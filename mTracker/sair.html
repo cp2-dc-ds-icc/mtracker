@@ -13,9 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/index.css">
     <script src="JS/index.js"></script>
-    <title>Login - MTRACKER</title>
+    <title>MTRACKER</title>
 </head>
-<body onload="verificarLogin()">
+<body>
     <header>
         <div class="interface">
             <nav class="menu">
@@ -33,14 +33,8 @@
     </header>
     <main>
         <div class="interface">
-            <div class="login">
-                <h1>Login</h1>
-                <br>
-                <input type="text" placeholder="Nome de Usuário" id="user" required><br><br>
-                <input type="password" placeholder="Senha" id="senha" required><br><br>
-                <button onclick="logarConta()">ENTRAR</button><br>
-                <br>
-                <p>Não tem uma conta? <a href="cadastro.html">Criar agora.</a></p>
+            <div class="sair">
+                <p>Você está logado agora. <span onclick="logout()">CLIQUE AQUI</span> para sair.</p>
             </div>
         </div>
     </main>

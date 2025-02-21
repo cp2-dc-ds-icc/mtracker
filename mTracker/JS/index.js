@@ -6,7 +6,7 @@ function corsite(paginas){
 
     let but = pagina.getElementByClassName("btn-darlig");
     but.classList.toggle("modoescuro");
-    }
+}
 
 function cadastrarConta(){
 
@@ -32,7 +32,7 @@ function cadastrarConta(){
             window.alert("Nome de usuário já cadastrado.");
         }
     };
-    }
+}
 
 function logarConta(){
 
@@ -47,6 +47,76 @@ function logarConta(){
     }
     else {
         window.alert("Logado.")
+        localStorage.setItem("logado", "true");
+        localStorage.setItem("usuarioLogado", nome);
         window.location.href = "../index.html";
+    }
+}
+
+function verificarLogin(){
+    let status = localStorage.getItem("logado")
+    if (status === "true"){
+        window.alert("Você já está logado.");
+        window.location.href = "../sair.html";
+    }
+}
+
+function permissaoEntrar(){
+    let status = localStorage.getItem("logado")
+    if (status !== "true"){
+        window.alert("Você ainda não está logado.");
+        window.location.href = "../login.html";
+    }
+}
+
+function logout(){
+    localStorage.removeItem("logado");
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "../login.html";
+}
+
+function fazerPost(){
+    let usuario = localStorage.getItem("usuarioLogado");
+    let postagem = document.getElementById("post").value;
+    let postagemLista = document.getElementById("postagens");
+
+    if (postagem === ""){
+        window.alert("A postagem não pode estar vázia.");
+    } 
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = usuario + ": " + postagem;
+
+        postagemLista.appendChild(li);
+        document.getElementById("post").value = "";
+        salvarComentario(usuario, postagem);
+    }
+}
+
+function salvarComentario(user, post) {
+    let posts = localStorage.getItem("posts");
+    if (!posts){
+        posts = "";
+    }
+    else {
+        posts += "\n";
+    }
+    posts += user + ": " + post;
+    localStorage.setItem("posts", posts);
+}
+
+function carregarPosts(){
+    let posts = localStorage.getItem("posts");
+    let postsLista = document.getElementById("postagens");
+
+    postsLista.innerHTML = "";
+
+    if(posts){
+        let listaPosts = posts.split("\n");
+        listaPosts.forEach(postagem => {
+            let li = document.createElement("li");
+            li.innerHTML = postagem;
+            postsLista.appendChild(li);
+        });
     }
 }
