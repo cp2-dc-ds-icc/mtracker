@@ -22,7 +22,7 @@ function cadastrarConta(){
             if (senha === confirmarSenha){
                 window.alert("Conta cadastrada com sucesso");
                 localStorage.setItem(nome, senha);
-                window.location.href = "../login.html";
+                window.location.href = "login.html";
             }
             else {
                 window.alert("Senha e confirmar senha devem ser iguais.");
@@ -49,7 +49,7 @@ function logarConta(){
         window.alert("Logado.")
         localStorage.setItem("logado", "true");
         localStorage.setItem("usuarioLogado", nome);
-        window.location.href = "../index.html";
+        window.location.href = "index.html";
     }
 }
 
@@ -57,7 +57,7 @@ function verificarLogin(){
     let status = localStorage.getItem("logado")
     if (status === "true"){
         window.alert("Você já está logado.");
-        window.location.href = "../sair.html";
+        window.location.href = "sair.html";
     }
 }
 
@@ -65,14 +65,14 @@ function permissaoEntrar(){
     let status = localStorage.getItem("logado")
     if (status !== "true"){
         window.alert("Você ainda não está logado.");
-        window.location.href = "../login.html";
+        window.location.href = "login.html";
     }
 }
 
 function logout(){
     localStorage.removeItem("logado");
     localStorage.removeItem("usuarioLogado");
-    window.location.href = "../login.html";
+    window.location.href = "login.html";
 }
 
 function fazerPost(){
