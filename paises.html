@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crescimento Populacional</title>
+</head>
+<script>
+    function calcularPop() {
+        let popA = parseFloat(document.getElementById("primeiraPop").value);
+        let taxaA = parseFloat(document.getElementById("primeiraTaxa").value);
+        let popB = parseFloat(document.getElementById("segundaPop").value);
+        let taxaB = parseFloat(document.getElementById("segundaTaxa").value);
+        let anos = 0;
+
+        while (popA < popB) {
+            popA += popA * taxaA;
+            popB += popB * taxaB;
+            anos++;
+        }
+        document.getElementById("resposta").innerHTML = "Levará "+anos+" anos para que o país A consiga igualar ou superar o país B"
+    }
+</script>
+<body>
+    <h1>Crescimento Populacional</h1>
+
+    <input type="text" id="primeiraPop" placeholder="Insira a menor população."><br>
+    <input type="text" id="primeiraTaxa" placeholder="Insira a taxa de crescimento."><br><br>
+    <input type="text" id="segundaPop" placeholder="Insira a maior população."><br>
+    <input type="text" id="segundaTaxa" placeholder="Insira a taxa de crescimento."><br><br>
+
+    <button onclick="calcularPop()">Calcular</button>
+    <p id="resposta"></p>
+</body>
+</html>

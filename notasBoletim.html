@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Notas</title>
+</head>
+<script>
+    function calcularNotas(){
+        let Valor1 = parseFloat(document.getElementById('primeiraNota').value);
+        let Valor2 = parseFloat(document.getElementById('segundaNota').value);
+
+        if (Valor1 > 10 || Valor2 > 10){
+            if (Valor1 > 10 && Valor2 > 10) {
+                window.alert('As duas notas são inválidas');
+                }
+            else {
+                if (Valor1 > 10){
+                window.alert('Primeira nota inválida');
+                }
+                else{
+                window.alert('Segunda nota inválida');
+                }
+            }
+        }
+
+        else if (Valor1 < 0 || Valor2 < 0){
+            if (Valor1 < 0 && Valor2 < 0){
+                window.alert('Ambas as notas inválidas');
+                }
+            else if (Valor1 < 0){
+                window.alert('Primeira nota inválida');
+                }
+            else {
+                window.alert('Segunda nota inválida');
+                }
+        }
+
+        else{
+            let SomaMedia = (Valor1 + Valor2)/2;
+            if(SomaMedia == 10){
+                document.getElementById('Nota').innerHTML = (SomaMedia, 'Aprovado com Distinção');
+            }
+            else if(SomaMedia >= 7){
+                document.getElementById('Nota').innerHTML = (SomaMedia, 'Aprovado');
+            }
+            else{
+                document.getElementById('Nota').innerHTML = (SomaMedia, 'Reprovado');
+            }
+            document.getElementById('Nota').innerHTML += " com média: "+ SomaMedia;
+        }
+    }
+</script>
+<body>
+    <input type="text" id="primeiraNota" placeholder="Insira sua primeira nota:" maxlength="2">
+    <input type="text" id="segundaNota" placeholder="Insira sua segunda nota:" maxlength="2">
+    <button onclick="calcularNotas()">Enviar Notas</button>
+    <p id="Nota"></p>
+</body>
+</html>

@@ -1,11 +1,36 @@
 function corsite(paginas){
+    salvarModo();
     paginas.body.classList.toggle("modoescuro");
 
     let texto = paginas.getElementsByClassName("menu");
     texto.classList.toggle("modoescuro");
 
-    let but = pagina.getElementByClassName("btn-darlig");
+    let but = paginas.getElementByClassName("btn-darlig");
     but.classList.toggle("modoescuro");
+}
+
+function salvarModo(){
+    if (localStorage.getItem("modo", "claro")){
+        localStorage.removeItem("modo");
+    }
+    else {
+        localStorage.setItem("modo", "claro");
+    }
+}
+
+function verificarModo(){
+    if (localStorage.getItem("modo", "claro")){
+
+        document.body.classList.toggle("modoescuro");
+
+        let texto = paginas.getElementsByClassName("menu");
+        texto.classList.toggle("modoescuro");
+
+        let but = paginas.getElementByClassName("btn-darlig");
+        but.classList.toggle("modoescuro");
+
+    }
+
 }
 
 function cadastrarConta(){

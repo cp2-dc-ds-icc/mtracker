@@ -15,7 +15,7 @@
     <script src="JS/index.js"></script>
     <title>MTRACKER</title>
 </head>
-<body onload="permissaoEntrar(), carregarPosts()">
+<body onload="permissaoEntrar(), carregarPosts(), verificarModo()">
     <header>
         <div class="interface">
             <nav class="menu">
@@ -30,16 +30,16 @@
                 </button>
             </div>
         </div>
-    </header>
+    </header><br><br>
     <main>
         <div class="interface">
             <input type="text" id="post" placeholder="Poste o que quiser.">
 
-            <button onclick="fazerPost()" style="padding: 5px; border-radius: 5px; border: none;">POSTAR</button><br><br>
+            <button onclick="fazerPost()" style="padding: 5px; border-radius: 5px; border: none;">POSTAR</button><br><br><br><br>
 
-            <hr><br>
+            <hr><br><br><br>
 
-            <h1>POSTS</h1><br><br>
+            <h1>POSTS</h1><br>
             <div class="posts">
                 <ul id="postagens">
                 </ul>
