@@ -37,13 +37,30 @@ body{
 .semComentarios {
     justify-content: center;
     text-align: center;
-    font-style: italic;
 }
 
 .estilo{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.sobre{
+    padding: 8% 10%;
+}
+.sobre p {
+    font-size: 15px;
+}
+.bio{
+    margin: 5% auto;
+}
+.bio table, th{
+    padding: 30px;
+    border-spacing: 4px;
+    border:1px solid #ffffff;
+}
+.bio td {
+    border:1px solid #ffffff;
+    padding: 10px;
 }
 
 /*CABEÇA*/
