@@ -115,6 +115,8 @@ function fazerPost(){
         postagemLista.appendChild(li);
         document.getElementById("post").value = "";
         salvarComentario(usuario, postagem);
+        document.getElementById("semComentarios").style.display = "none";
+
     }
 }
 
@@ -137,6 +139,7 @@ function carregarPosts(){
     postsLista.innerHTML = "";
 
     if(posts){
+        document.getElementById("semComentarios").style.display = "none";
         let listaPosts = posts.split("\n");
         listaPosts.forEach(postagem => {
             let li = document.createElement("li");

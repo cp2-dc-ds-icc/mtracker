@@ -4,6 +4,7 @@
     box-sizing: border-box;
     transition: .2s;
     font-family: "Poppins", serif;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -31,6 +32,18 @@ body{
     display: block;
     width: fit-content;
     border-radius: 5px;
+}
+
+.semComentarios {
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
+}
+
+.estilo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /*CABEÇA*/

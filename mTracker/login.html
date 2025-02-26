@@ -13,11 +13,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/index.css">
     <script src="JS/index.js"></script>
+    <link rel="icon" href="IMGS/logoMTracker.ico">
     <title>Login - MTRACKER</title>
 </head>
 <body onload="verificarLogin(), verificarModo()">
     <header>
         <div class="interface">
+            <a href="index.html">
+                <img src="IMGS/logoMTracker.png" alt="logoM" width="60px">
+            </a>
             <nav class="menu">
                 <ul>
                     <li><a href="index.html">Início</a></li>
@@ -33,14 +37,22 @@
     </header>
     <main>
         <div class="interface">
-            <div class="login">
-                <h1>Login</h1>
-                <br>
-                <input type="text" placeholder="Nome de Usuário" id="user" required><br><br>
-                <input type="password" placeholder="Senha" id="senha" required><br><br>
-                <button onclick="logarConta()">ENTRAR</button><br>
-                <br>
-                <p>Não tem uma conta? <a href="cadastro.html">Criar agora.</a></p>
+            <div class="estilo">
+                <div class="imagens">
+                    <img src="IMGS/imagemLogin1.png" alt="Mano correndo" width="250px">
+                </div>
+                <div class="login">
+                    <h1>Login</h1>
+                    <br>
+                    <input type="text" placeholder="Nome de Usuário" id="user" required><br><br>
+                    <input type="password" placeholder="Senha" id="senha" required><br><br>
+                    <button onclick="logarConta()">ENTRAR</button><br>
+                    <br>
+                    <p>Não tem uma conta? <a href="cadastro.html">Criar agora.</a></p>
+                </div>
+                <div class="imagens">
+                    <img src="IMGS/imagemLogin2.png" alt="Mano correndo" width="250px">
+                </div>
             </div>
         </div>
     </main>
